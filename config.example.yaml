@@ -1,0 +1,45 @@
+# TimeTree Export Configuration
+# Copy this file to config.yaml and fill in your details
+
+# Authentication
+authentication:
+  # For web scraper
+  email: "your_email@example.com"
+  password: "your_password"
+  
+  # For API client (optional - requires CSRF token from web session)
+  csrf_token: ""
+  session_cookie: ""
+
+# Export settings
+export:
+  output_directory: "./output"
+  formats:
+    - csv
+    - json
+    - ical
+  
+  # Date range for export (ISO format)
+  start_date: "2024-01-01"
+  end_date: "2024-12-31"
+  
+  # Specific calendars to export (leave empty for all)
+  calendars: []
+
+# Scraper settings
+scraper:
+  headless: true
+  timeout: 30000  # milliseconds
+  
+  # Wait for these selectors to confirm login
+  login_confirmation_selector: ".dashboard"
+
+# API settings
+api:
+  base_url: "https://timetreeapp.com/api/v1"
+  rate_limit_delay: 100  # milliseconds between requests
+
+# Logging
+logging:
+  level: "INFO"
+  file: "timetree_export.log"
