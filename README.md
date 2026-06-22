@@ -118,6 +118,12 @@ python -m src.timetree_export.cli --verbose
 
 # Combine options
 python -m src.timetree_export.cli --format csv --calendar cal_123 --output ./backup
+
+# Quick test with command-line credentials (no config file needed)
+python -m src.timetree_export.cli --email your_email@example.com --password your_password
+
+# List available calendars
+python -m src.timetree_export.cli --email your_email@example.com --password your_password --list-calendars
 ```
 
 ## CLI Options
@@ -128,6 +134,9 @@ python -m src.timetree_export.cli --format csv --calendar cal_123 --output ./bac
 | `--format`, `-f` | Export format: csv, json, ical, or all | `all` |
 | `--calendar`, `-c` | Specific calendar ID to export | All calendars |
 | `--config` | Path to configuration file | `config.yaml` |
+| `--email`, `-e` | TimeTree account email | From config file |
+| `--password`, `-p` | TimeTree account password | From config file |
+| `--list-calendars` | List available calendars and exit | Requires --email and --password |
 | `--verbose`, `-v` | Enable verbose logging | Disabled |
 
 ## Output Formats
